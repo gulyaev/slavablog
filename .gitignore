@@ -1,0 +1,22 @@
+# Python (Django) related
+*.pyc
+*.pyo
+__pycache__/
+db.sqlite3
+venv/
+*.log
+*.pot
+*.pyc
+
+# Node (Angular) related
+node_modules/
+dist/
+.angular/
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo

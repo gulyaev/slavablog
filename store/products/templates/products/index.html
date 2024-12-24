@@ -1,0 +1,64 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href= {% static 'vendor/css/index.css' %} rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <section>
+    <!--    <div class="alert alert-light text-center" role="alert">-->
+    <!--        Информационное сообщение-->
+    <!--    </div>-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <p>
+                    {% if messages or form.non_field_errors %}
+                        <div class="alert
+                        {% if messages %} alert-success {% else %} alert-warning {% endif %}
+                        alert-dismissible fade show" role="alert"
+                             style="margin-top: 50px;">
+                            {% if messages  %}
+                                {% for message in messages %}
+                                    {{ message }}
+                                {% endfor %}
+                            {% else %}
+                                {{ form.non_field_errors }}
+                            {% endif %}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endif %}
+                </p>
+                <h1 class="mt-5">Частный репетитор</h1>
+                <div>
+                    {% if is_promotion %}
+                    <div class="font-weight-bold" style="margin-bottom: 10px;">ЗАПИШИТЕСЬ НА КУРС УЖЕ СЕЙЧАС</div>
+                        <div class="font-weight-bold">Раздел Физмат и IT:</div>
+                        <ul>
+                            <li>Физика</li>
+                            <li>Математика</li>
+                            <li>Программирование Python, ReactJS</li>
+                        </ul>
+                        <div class="font-weight-bold">Раздел Иностранные языки::</div>
+                        <ul>
+                            <li>Ангийский язык</li>
+                            <li>Немецкий язык</li>
+                            <li>Турецкий язык</li>
+                        </ul>
+
+
+                    {% endif %}
+                </div>
+                <button id="start-purchase-btn" type="button" class="btn btn-lg">
+                    <a id="start-purchase-link" href={% url 'products:index' %}>
+                        Узнать больше
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+    </section>
+{% endblock %}
