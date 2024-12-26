@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 from django.conf.global_settings import STATICFILES_DIRS, AUTH_USER_MODEL
@@ -133,12 +133,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+# Папки, где Django будет искать статические файлы для сбора
 STATICFILES_DIRS = (
-        BASE_DIR / 'static/',
+        BASE_DIR / 'static/', # Здесь указаны папки с исходными статическими файлами
 )
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Путь, куда будут собираться статические файлы
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
