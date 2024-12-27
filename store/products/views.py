@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 # Create your views here.
 def index(request):
     context = {
-        'title': 'Частный репетитор',
+        'title': 'uroki.kz',
         'username': 'Mihail',
         'is_promotion': True,
     }

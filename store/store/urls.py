@@ -13,6 +13,7 @@ urlpatterns = [
     path('', index, name = 'index'), #cmd+D
     # path('products/', products, name = 'products'),
     path('products/', include('products.urls', namespace = 'products')),
+    path('subjects/', include('backend_api.urls', namespace = 'subjects')),
     path('users/', include('users.urls', namespace = 'users')),
 ]
 
