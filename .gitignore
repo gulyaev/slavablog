@@ -21,5 +21,9 @@ yarn-error.log
 *.swp
 *.swo
 
+# backend related
+store/backend_api/fixtures/
+store/products/fixtures/
+
 # frontend related
 frontend/node_modules/
