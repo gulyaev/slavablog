@@ -26,4 +26,5 @@ store/backend_api/fixtures/
 store/products/fixtures/
 
 # frontend related
+frontend/
 frontend/node_modules/
