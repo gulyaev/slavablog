@@ -10,7 +10,7 @@ from products.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', SchoolSubjectView.as_view(), name='oh shit'),
-    path('', index, name = 'index'), #cmd+D
+    path('mainpageurokikz/', index, name = 'index'), #cmd+D
     # path('products/', products, name = 'products'),
     path('products/', include('products.urls', namespace = 'products')),
     path('subjects/', include('backend_api.urls', namespace = 'subjects')),
