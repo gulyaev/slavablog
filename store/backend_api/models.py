@@ -12,6 +12,7 @@ class SubjectCategory(models.Model):
 class SchoolSubject(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
+    category = models.ForeignKey(to=SubjectCategory, on_delete=models.PROTECT)
 
     def __str__(self):
-        return f'Предмет: {self.title}'
+        return f'Предмет: {self.title} | Категория: {self.category.name}'

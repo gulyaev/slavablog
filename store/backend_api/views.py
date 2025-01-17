@@ -15,13 +15,18 @@ def subjects(request):
 # Create your views here.
 class SchoolSubjectView(APIView):
     def get(self, request):
-        output = [
-            {
-                "title": output.title,
-                "description": output.description
-            } for output in SchoolSubject.objects.all()
-        ]
-        return Response(output)
+        # output = [
+        #     {
+        #         "title": output.title,
+        #         "description": output.description
+        #     } for output in SchoolSubject.objects.all()
+        # ]
+        # return Response(output)
+
+        # Используем сериализатор для объектов SchoolSubject
+        school_subjects = SchoolSubject.objects.all()
+        serializer = SchoolSubjectSerializer(school_subjects, many=True)  # many=True, т.к. несколько объектов
+        return Response(serializer.data)
 
     def post (self, request):
         serializer = SchoolSubjectSerializer(data=request.data)
